@@ -17,7 +17,7 @@
           </a>
           <div class="text d-block">
             <h3 class="heading">
-              <a href="{% url 'quiz-detail' quiz.id %}">{{quiz.title}}</a>
+              <a href="{% url 'quiz-detail' quiz.id %}">{{quiz.title|title}}</a>
             </h3>
             <p>
               {{quiz.description|safe|truncatewords:8}}
