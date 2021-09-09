@@ -59,7 +59,7 @@ def quiz_questions(request,pk):
     exam_date = quiz.exam_date.filter(exam_date=date.today()).first()
     if exam_date:
         questions = exam_date.questions.all().order_by('?')
-        data = [{"quiz_id":quiz.id,"question_id":question.id,"number":index+1,"question":question.title,"options":[{"id":answer.id,"option":answer.answer_text} for answer in question.answer.all().order_by('?')],"answer":question.answer.filter(is_right=True).first().answer_text} for index,question in enumerate(questions)]
+        data = [{"quiz_id":quiz.id,"question_id":question.id,"number":index+1,"question":question.title,"options":[{"id":answer.id,"option":answer.answer_text} for answer in question.answer.all()],"answer":question.answer.filter(is_right=True).first().answer_text} for index,question in enumerate(questions)]
     else:
         data = []
     return JsonResponse({"success":True,"questions":data})
