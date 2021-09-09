@@ -5,14 +5,14 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 py-md-5">
-        <h1 class="display-4">{{quiz.title}}</h1>
+        <h1 class="display-4">{{quiz.title|title}}</h1>
         {{quiz.description|safe}}
         <hr>
 
         {% if exam_schedule %}
           <a href="{% url "quiz-start" quiz.id %}" class="btn btn-primary">Start Quiz</a>
         {% else %}
-          <p>Exam is scheduled on {{exam_schedule_date}}</p>
+          <p><strong>Exam is scheduled on {{exam_schedule_date}}</strong></p>
         {% endif %}
       </div>
     </div>
