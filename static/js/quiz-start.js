@@ -186,7 +186,7 @@ function saveAnswer(answer, quizEnrolled) {
 }
 
 function startTimer() {
-  var c = 180;
+  var c = 1200;
 
   x = setInterval(function () {
     var minutes = parseInt(c / 60) % 60;
