@@ -1,8 +1,6 @@
 import os
 import django_heroku
 from pathlib import Path
-import cloudinary
-import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,14 +118,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': "threezero",
-    'API_KEY': 483221819485382,
-    'API_SECRET': "2jKMmVo9Y6dzeLuOlhsj1EyUV7o",
-}
+
 
 
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
