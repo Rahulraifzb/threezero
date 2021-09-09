@@ -32,8 +32,6 @@ INSTALLED_APPS = [
     "core.backend.main.apps.MainConfig",
     'ckeditor',
     'django_extensions'
-    'cloudinary',
-    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
