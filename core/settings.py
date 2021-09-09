@@ -1,6 +1,8 @@
 import os
 import django_heroku
 from pathlib import Path
+import cloudinary
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +15,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-g$j1%q-vin3@ee$9kw+&ohe$v0uw=)aj3$3_yr(q^uq9r67$$f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['threezero.herokuapp.com',"127.0.0.1"]
 
@@ -32,6 +34,8 @@ INSTALLED_APPS = [
     "core.backend.main.apps.MainConfig",
     'ckeditor',
     'django_extensions'
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -116,5 +120,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': "threezero",
+    'API_KEY': 483221819485382,
+    'API_SECRET': "2jKMmVo9Y6dzeLuOlhsj1EyUV7o",
+}
+
+
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_STORAGE =  'django.contrib.staticfiles.storage.StaticFilesStorage'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
