@@ -36,7 +36,11 @@ def mylogin(request):
         if request.method == "POST":
             if form.is_valid():
                 email = form.cleaned_data.get("email")
-                username = get_object_or_404(User,email=email).username
+                username = None
+                try:
+                    username = get_object_or_404(User,email=email).username
+                except:
+                    username = None
                 password = form.cleaned_data.get("password")
                 url = request.GET.get("next",None)
                 print("url:   ",url)
