@@ -97,16 +97,18 @@ function showResult() {
   result_box.classList.remove("d-none");
 
   const scoreText = result_box.querySelector(".score_text");
-  if (userScore > 3) {
-    let scoreTag = `<p>and congrates😎,You got <span>${userScore}</span> out of <span>${questions.length}</span></p>`;
+//   if (userScore > 3) {
+//     let scoreTag = `<p>and congrates😎,You got <span>${userScore}</span> out of <span>${questions.length}</span></p>`;
+//     scoreText.innerHTML = scoreTag;
+//   } else if (userScore > 1) {
+//     let scoreTag = `<p>and nice😟,You got <span>${userScore}</span> out of <span>${questions.length}</span></p>`;
+//     scoreText.innerHTML = scoreTag;
+//   } else {
+//     let scoreTag = `<p>and sorry🥴,You got only <span>${userScore}</span> out of <span>${questions.length}</span></p>`;
+//     scoreText.innerHTML = scoreTag;
+//   }
+    let scoreTag = `<p>and congrates😎, for Particiating in the exam</p>`;
     scoreText.innerHTML = scoreTag;
-  } else if (userScore > 1) {
-    let scoreTag = `<p>and nice😟,You got <span>${userScore}</span> out of <span>${questions.length}</span></p>`;
-    scoreText.innerHTML = scoreTag;
-  } else {
-    let scoreTag = `<p>and sorry🥴,You got only <span>${userScore}</span> out of <span>${questions.length}</span></p>`;
-    scoreText.innerHTML = scoreTag;
-  }
 }
 
 function optionSelected(answer) {
