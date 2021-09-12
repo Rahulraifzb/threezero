@@ -118,4 +118,4 @@ class QuizUserAnswer(Updated):
     answer = models.ManyToManyField(Answer,related_name="quiz_amswer")
 
     def __str__(self):
-        return f'{self.quiz.quiz.title}'
+        return f'{self.quiz.quiz.title} {self.quiz.user}'
